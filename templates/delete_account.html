@@ -1,0 +1,15 @@
+# สมาชิกในกลุ่ม 1.พงษ์ศักดิ์ เมฆอรุณ  013
+# สมาชิกในกลุ่ม 2.ญาณิศา เคลือบกลิ่น 006
+# สมาชิกในกลุ่ม 3.ศุภกร เมฆวัน 018
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-5">Delete Account</h1>
+<form method="post" class="mt-3">
+    <div class="form-group">
+        <label for="account_number">Account Number:</label>
+        <input type="text" name="account_number" class="form-control" id="account_number" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back</a>
+{% endblock %}

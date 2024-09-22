@@ -1,0 +1,23 @@
+# สมาชิกในกลุ่ม 1.พงษ์ศักดิ์ เมฆอรุณ  013
+# สมาชิกในกลุ่ม 2.ญาณิศา เคลือบกลิ่น 006
+# สมาชิกในกลุ่ม 3.ศุภกร เมฆวัน 018
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-5">View Balance</h1>
+{% if account %}
+    <div class="alert alert-info mt-3">
+        <p>Account Number: {{ account['account_number'] }}</p>
+        <p>Username: {{ account['username'] }}</p>
+        <p>Balance: {{ account['balance'] }}</p>
+    </div>
+{% else %}
+    <form method="post" class="mt-3">
+        <div class="form-group">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" class="form-control" id="account_number" required>
+        </div>
+        <button type="submit" class="btn btn-primary">View Balance</button>
+    </form>
+{% endif %}
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back</a>
+{% endblock %}
